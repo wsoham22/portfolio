@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/JgiK56pYQbCAWr+WuZ/6/0JCA" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/JgiK56pYQbCAWr+WuZ/6/0JCA" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/JgiK56pYQbCAWr+WuZ/6/0JCA" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt=""class = "logo">
+                <ul id="sidemenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#">Portfolio</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hey,I'm <span>Soham</span><br>From Mumbai</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About me</h1>
+                    <p>I am a passionate web developer,third year engineer developing skills and some webs,<br>Nice to meet you!<br>Also while the code is getting debugged I play guitar sometimes:)</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tabcontents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                        </ul>
+                    </div>
+                    <div class="tabcontents" id="education">
+                    >
+                        <ul>
+                            <li><span>BE-Information Technology</span></li>
+                            <li>SIES-Graduate School of Technology, Nerul </li>
+                            <li>Mumbai University</li>
+                            <li>Dec 21-May 25</li>
+                            <li>CGPA:7.04</li>
+                            <li>XII (HSC) | S.V Joshi High School, Dombivli | 86.6%</li>
+                            <li>X(SSC) | Don Bosco High School, Dombivli | 92%</li>
+                        </ul>
+                    </div>
+                    <div class="tabcontents" id="experience">
+                        <ul>
+                            <li>Worked on various web development projects using MERN stack,authentication authorization<br> by jwt,encrypting confidential data with bcrypt module and deployment in heroku.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>wsoham22@gmail.com</p>
+                    <p>+91-9820334522</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sohamwagh34/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/getwithsw/"><i class="fab fa-linkedin"></i></a>
+                    </div>                    
+                     </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                     <input type="text" name = "Name" placeholder = "Your Name" required > 
+                     <input type="email" name = "Email" placeholder = "Your Email" required >
+                     <textarea name="Message" id="" cols="30" rows="6" placeholder="Your message"></textarea>
+                     <button type="submit" class="btn btn-3">Submit</button> 
+                    </form>
+                </div>
+                <a href="images/resume.pdf" download class="btn btn-2">Download Resume</a>
+            </div>
+        </div>
+        <div class="copyright">
+
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tabcontents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname);
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu = documentgetElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzJwrjyUPYL6LRFaZCI1C2DA5xanfCZ5b1WXNgzibGBUaVIYI_hLpdMRrjCc9TJ85Ea/exec';
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+    </script>
+</body>
+</html>
